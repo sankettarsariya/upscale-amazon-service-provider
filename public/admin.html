@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upscale Admin - Leads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Cabinet+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <div class="admin-top">
+      <div>
+        <a href="/" class="logo">Up<em>scale</em></a>
+        <p class="admin-count" id="lead-count">Loading leads...</p>
+      </div>
+      <div class="admin-actions">
+        <a href="/" class="btn-pill out">View Website</a>
+        <button class="btn-pill out" id="logout-btn" hidden>Logout</button>
+        <button class="btn-pill" id="export-btn" hidden>Export CSV</button>
+      </div>
+    </div>
+
+    <section class="admin-login admin-card" id="admin-login">
+      <div class="cf-title">Admin Login</div>
+      <form id="login-form">
+        <div class="cf-grp">
+          <label for="admin-email">Email</label>
+          <input id="admin-email" type="email" placeholder="admin@example.com" required>
+        </div>
+        <div class="cf-grp">
+          <label for="admin-password">Password</label>
+          <input id="admin-password" type="password" placeholder="Password" required>
+        </div>
+        <button class="btn-pill cf-btn" type="submit">Login</button>
+        <div class="cf-ok" id="login-message"></div>
+      </form>
+    </section>
+
+    <section class="admin-card">
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Product</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody id="lead-rows"></tbody>
+        </table>
+      </div>
+      <div class="admin-empty" id="empty-state" hidden>No leads yet. Submit the website form once to test it.</div>
+    </section>
+  </main>
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>
